@@ -23,14 +23,17 @@
 
 - (void)setProgress:(CGFloat)progres
 {
-		if ((int)progres == maxNumProgre) {
-				[self resetProgress];
-		}
-		progre = progres;
-		downNumber.text = [NSString  stringWithFormat:@"%d",(int)progres];
-		[progressLayer setProgressX:progre];
-		[progressLayer setNeedsDisplay];
+		
+    if ((int)progres == maxNumProgre) {
+        [self resetProgress];
+    }
+
+    progre = progres;
+    downNumber.text = [NSString stringWithFormat:@"%d", (int)progres];
+    [progressLayer setProgressX:progre];
+    [progressLayer setNeedsDisplay];
 }
+
 
 - (id)initNameStr:(NSString *)str maxNum:(int)maxnum
 {
@@ -129,7 +132,7 @@
 {
     [progressLayer release];
     progressLayer = nil;
-		
+
     [super dealloc];
 }
 
